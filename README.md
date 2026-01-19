@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HowMuchPer
 
-## Getting Started
+**HowMuchPer** is a small utility project that converts a value expressed in one time unit into equivalent values across other time units.
 
-First, run the development server:
+You provide a number and its base interval (e.g. per minute, per day, per year), and the app calculates what that number looks like per second, hour, day, month, and year.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## What it does
+
+Given:
+
+* a numeric value
+* a base time unit (second, minute, hour, day, month, year)
+
+It calculates:
+
+* per second
+* per minute
+* per hour
+* per day
+* per month
+* per year
+
+The logic is deterministic and purely mathematical — no external data sources.
+
+---
+
+## Example
+
+```
+Input:
+1000000 per year
+
+Output:
+≈ 83,333.33 per month
+≈ 2,739.73 per day
+≈ 114.16 per hour
+≈ 1.90 per minute
+≈ 0.03 per second
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Use cases
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* sanity-checking large numbers
+* comparing metrics across different time scales
+* quickly understanding magnitude and scale
+* small educational or visualization projects
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
